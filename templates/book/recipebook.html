@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recipe</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<body>
+    <style>
+         #title{
+            text-align: center;
+            font-size: 50px;
+            z-index: 1;
+            position: relative;
+        }
+        #menubar{
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        .box2{
+            /*display: flex;*/
+        }
+        button{
+            background-color: white;
+            font-size: 20px;
+        }
+        #home{
+            border-bottom: none;
+            border-top: none;
+            border-left: black;
+        }
+        #mypage{
+            border-bottom: none;
+            border-top: none;
+            border-left: black;
+        }
+        #recipebook{
+            border-bottom: none;
+            border-top: none;
+            border-left: black;
+            color: #448B18;
+        }
+        #video{
+            border-bottom: none;
+            border-top: none;
+            border-left: black;
+        }
+        #store{
+            border: none;
+        }
+        #search_box {
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 230px;
+            float: right;
+            display: flex;
+            margin-top: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 50px;
+        }
+        #search{
+            margin-left: 10px;
+            border: none;
+            text-align: center;
+        }
+         #photo_box{
+            width: 300px;
+            height: 210px;
+            background-color: white;
+            border: 2px solid #448B18;
+         }
+         #photo{
+             width: 180px;
+             height: 210px;
+             background-color: lightgrey;
+         }
+        input:focus {outline: none;}
+    </style>
+    <div class="box1">
+        <div id="title">
+            <h3>Recipe Book</h3>
+        </div>
+        <div class="box2">
+            <div id="menubar">
+                <button id="home" type="submit"><b>홈</b></button>
+                <button id="mypage" type="submit"><b>마이페이지</b></button>
+                <button id="recipebook" type="submit"><b>레시피북</b></button>
+                <button id="video" type="submit"><b>레시피영상</b></button>
+                <button id="store" type="submit"><b>맛집</b></button>
+            </div>
+        </div>
+        <div id="search_box">
+            <input id="search" type="text" placeholder="검색어를 입력하시오">
+            <i class="fas fa-search"></i>
+        </div>
+        <div id="recipe_box">
+            <div id="photo_box">
+                <div id="photo"></div>
+                <div id="text_box">
+                    <div id="recipe_name">{{ recipe.name }}</div>
+                    <div class="star">★★★★</div>
+                    <div id="recipe_text">{{ recipe.text }}</div>
+            </div>
+                      <i class="far fa-heart"></i>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
