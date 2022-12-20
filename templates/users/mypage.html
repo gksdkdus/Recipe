@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <title>Recpie</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
-    #title{
+     #title{
         text-align: center;
         font-size: 50px;
+        z-index: 1;
+        position: relative;
     }
     #menubar{
         text-align: center;
+        z-index: 2;
+        position: relative;
     }
     .box2{
         /*display: flex;*/
@@ -28,6 +33,7 @@
         border-bottom: none;
         border-top: none;
         border-left: black;
+        color: #448B18;
     }
     #recipebook{
         border-bottom: none;
@@ -42,30 +48,50 @@
     #store{
         border: none;
     }
-    #login_box{
-        border-radius: 50px;
-        text-align: right;
-        margin-bottom: 20px;
+    #profile_ph {
+        border: 3px solid #448B18;
+        width: 130px;
+        height: 130px;
+        border-radius: 400px;
+        background-color: lightgray;
     }
-    #login{
-        background-color: #E5F0D2;
+    #profile_change{
+        font-size: 15px;
+        padding: 5px 30px 5px 30px;
+        border: none;
+        border-radius: 100px;
+        background-color: #B1D27B;
+        color: white;
     }
-    #signup{
-        background-color: #E5F0D2;
-        padding-left: 17px;
-        padding-right: 17px;
+    /*
+    .nickname{
+        float: right;
+        width: 30%;
+        padding:10px;
     }
-    .backcolor1{
+    .profile_change{
+        float: right;
+        width: 30%;
+        padding:10px;
+    }
+    */
+     #photo_box{
+        width: 170px;
+        height: 110px;
+        background-color: lightgrey;
+        border: 2px solid #448B18;
+     }
+     .backcolor1{
         background-color: #E5F0D2;
         padding: 100px;
-        z-index: 1;
+        z-index: 3;
         position: relative;
 
     }
     .backcolor2{
         background-color: #B1D27B;
         padding: 50px;
-        z-index: 2;
+        z-index: 4;
         margin-right: 300px;
         position: relative;
     }
@@ -74,7 +100,7 @@
         color: white;
         background-color: #448B18;
         font-size: 50px;
-        z-index: 3;
+        z-index: 5;
         padding-top: 50px;
         padding-bottom: 50px;
         margin-right: -300px;
@@ -94,17 +120,32 @@
                 <button id="video" type="submit"><b>레시피영상</b></button>
                 <button id="store" type="submit"><b>맛집</b></button>
             </div>
-            <div id="login_box">
-                <button id="login" type="submit">로그인</button>
-                <button id="signup" type="submit">가입</button>
-            </div>
         </div>
         <div class="backcolor1">
             <div class="backcolor2">
-                <div class="backcolor3">Recipe Book</div>
+                <div class="backcolor3"></div>
+            </div>
+        </div>
+        <div id="profile">
+            <img id="profile_ph" src="/static/images/profile.png" alt="프로필">
+            <div class="nickname">
+                <b>{{ user.nickname }} 님</b>
+            </div>
+            <div class="profile_change">
+                <button id="profile_change" type="submit">회원정보수정</button>
+            </div>
+        </div>
+        <div class="like_list">
+            <div id="like_title"><b>LIKE LIST</b></div>
+            <div id="video">
+                <div id="photo_box">
+                    dddd
+                    <div id='photo'>dd</div>
+                </div>
+                <div id="food_name">{{ food.foodname }}</div>
+                <i class="far fa-heart"></i>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>
