@@ -5,72 +5,91 @@
     <title>Recpie</title>
 </head>
 <style>
-    #title{
+    #title {
         text-align: center;
         font-size: 50px;
     }
-    #menubar{
+
+    #menubar {
         text-align: center;
     }
-    .box2{
+
+    .box2 {
         /*display: flex;*/
     }
-    button{
+
+    button {
         background-color: white;
         font-size: 20px;
     }
-    #home{
+
+    #home {
         border-bottom: none;
         border-top: none;
         border-left: black;
         color: #448B18;
     }
-    #mypage{
+
+    #mypage {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #recipebook{
+
+    #recipebook {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #video{
+
+    #video {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #store{
+
+    #store {
         border: none;
     }
-    #login_box{
+
+    #login_box {
         border-radius: 50px;
         text-align: right;
         margin-bottom: 20px;
     }
-    #login{
+
+    #login {
         background-color: #E5F0D2;
+        border-radius: 10px;
+        border: 2px solid grey;
     }
-    #signup{
+
+    #signup {
         background-color: #E5F0D2;
         padding-left: 17px;
         padding-right: 17px;
+        border-radius: 10px;
+        border: 2px solid grey;
     }
-    .backcolor1{
+
+    .backcolor1 {
         background-color: #E5F0D2;
         padding: 100px;
         z-index: 1;
         position: relative;
 
     }
-    .backcolor2{
+
+    .backcolor2 {
         background-color: #B1D27B;
         padding: 50px;
         z-index: 2;
         margin-right: 300px;
         position: relative;
+        margin-top: 50px;
     }
-    .backcolor3{
+
+    .backcolor3 {
         text-align: center;
         color: white;
         background-color: #448B18;
@@ -80,30 +99,36 @@
         padding-bottom: 50px;
         margin-right: -300px;
         position: relative;
+        margin-left: 200px;
     }
 </style>
 <body>
-    <div class="box1">
-        <div id="title">
-            <h3>Recipe Book</h3>
+<div class="box1">
+    <div id="title">
+        <h3>Recipe Book</h3>
+    </div>
+    <div class="box2">
+        <div id="menubar">
+            <button id="home" type="submit"><b>홈</b></button>
+            <button id="mypage" type="submit"><b>마이페이지</b></button>
+            <button id="recipebook" type="submit"><b>레시피북</b></button>
+            <button id="video" type="submit"><b>레시피영상</b></button>
+            <button id="store" type="submit"><b>맛집</b></button>
         </div>
-        <div class="box2">
-            <div id="menubar">
-                <button id="home" type="submit"><b>홈</b></button>
-                <button id="mypage" type="submit"><b>마이페이지</b></button>
-                <button id="recipebook" type="submit"><b>레시피북</b></button>
-                <button id="video" type="submit"><b>레시피영상</b></button>
-                <button id="store" type="submit"><b>맛집</b></button>
-            </div>
-            <div id="login_box">
+        <div id="login_box">
+            <a href="#">
                 <button id="login" type="submit">로그인</button>
+            </a>
+            <a href="#">
                 <button id="signup" type="submit">가입</button>
-            </div>
+            </a>
         </div>
-        <div class="backcolor1">
-            <div class="backcolor2">
-                <div class="backcolor3">Recipe Book</div>
-            </div>
+    </div>
+    <div class="backcolor1">
+        <div class="backcolor2">
+            <p>The discovery of new cuisine enriches human beings more than the discovery of new stars.</p>
+            <p>-Brillat Savarin-</p>
+            <div class="backcolor3">Recipe Book</div>
         </div>
     </div>
 </div>
