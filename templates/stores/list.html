@@ -67,7 +67,7 @@
         margin-top: 5px;
         padding-top: 10px;
         padding-bottom: 10px;
-        margin-right: 50px;
+        margin-right: 200px;
     }
 
     #search {
@@ -103,10 +103,6 @@
 
     .name_box > a {
         font-size: 10px;
-    }
-
-    .first_box {
-        margin-bottom: 150px;
     }
 
     .list_name {
@@ -171,11 +167,19 @@
         background: white;
         border: 3px solid #B1D27B;
         border-radius: 5px;
-        margin: 20px 10px;
+        margin: 20px 20px 20px 20px;
         height: 230px;
         padding: 20px 20px 10px 20px;
         box-shadow: 10px 5px 10px 5px #F5F5F5;
         width: 300px;
+    }
+
+    .list_box {
+        display: flex;
+    }
+
+    .store_list_box{
+        margin-left: 100px;
     }
 
 </style>
@@ -199,10 +203,51 @@
 </div>
 
 <div id="section">
-    <div class="first_box">
-        <div class="store_list_box">
-            <div class="list_name">
-                <b>{{ user.nickname }} 님 맞춤!!</b>
+
+    <div class="store_list_box">
+
+        <div class="list_name">
+            <b>{{ user.nickname }} 님 맞춤!!</b>
+        </div>
+
+        <div class="list_box">
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="swiper mySwiper">
                 <div id="personal_slider" class="swiper-wrapper">
@@ -225,7 +270,17 @@
             </div>
         </div>
 
-         <div class="swiper mySwiper">
+    </div>
+
+
+    <div class="store_list_box">
+
+        <div class="list_name">
+            <b>추천 카페</b>
+        </div>
+
+        <div class="list_box">
+            <div class="swiper mySwiper">
                 <div id="personal_slider" class="swiper-wrapper">
                     <div class='swiper-slide'>
                         <div class='photo_box'>
@@ -244,11 +299,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="store_list_box">
-            <div class="list_name">
-                <b>추천 카페</b>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="swiper mySwiper">
                 <div id="personal_slider" class="swiper-wrapper">
@@ -270,9 +338,51 @@
                 </div>
             </div>
         </div>
-        <div class="store_list_box">
-            <div class="list_name">
-                <b>최다검색</b>
+
+    </div>
+    <div class="store_list_box">
+
+        <div class="list_name">
+            <b>최다검색</b>
+        </div>
+        <div class="list_box">
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="swiper mySwiper">
                 <div id="personal_slider" class="swiper-wrapper">
@@ -295,6 +405,9 @@
             </div>
         </div>
     </div>
+
+</div>
+
 </div>
 
 

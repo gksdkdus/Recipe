@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>recipe</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 <body>
 <style>
     #title {
@@ -67,7 +67,7 @@
         margin-top: 5px;
         padding-top: 10px;
         padding-bottom: 10px;
-        margin-right: 50px;
+        margin-right: 200px;
     }
 
     #search {
@@ -80,22 +80,115 @@
         margin-left: 85px;
     }
 
-    #photo_box {
-        width: 300px;
+    #section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .name_box {
+        display: inline-block;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 30px;
+        margin-left: 15px;
+        z-index: 30;
+        text-align: center;
+        padding: 0 20px 0 20px;
+    }
+
+    .name_box a {
+        text-decoration: none;
+    }
+
+    .name_box > a {
+        font-size: 10px;
+    }
+
+
+    .list_name > b {
+        margin-left: 10px;
+    }
+
+    .list_image {
+        width: 170px;
         height: 210px;
-        background-color: white;
-        border: 2px solid #448B18;
+        overflow: hidden
+    }
+
+    .swiper-slide img {
+        display: block;
     }
 
     #photo {
-        width: 180px;
-        height: 210px;
-        background-color: lightgrey;
+        height: 100px;
+        z-index: 40;
     }
 
-    input:focus {
-        outline: none;
+    #photo > i {
+        float: right;
+        margin-top: 10px;
+        margin-right: 5px;
+        z-index: 60;
     }
+
+    .name_box > a {
+        font-size: 13px;
+    }
+
+    .like_name_box > a {
+        font-size: 13px;
+    }
+
+    #sw {
+        box-sizing: border-box;
+        height: 200px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 18px;
+        padding: 0 0 0 0;
+        margin: 110px 0 0 0;
+    }
+
+    .swiper-slide {
+        background: white;
+        border: 3px solid #B1D27B;
+        border-radius: 5px;
+        margin: 20px 20px 20px 20px;
+        height: 230px;
+        padding: 20px 20px 10px 20px;
+        box-shadow: 10px 5px 10px 5px #F5F5F5;
+        width: 300px;
+    }
+
+    .list_box {
+        display: flex;
+    }
+
+    .store_list_box {
+        margin-left: 100px;
+        margin-top: 70px;
+    }
+
+    .photo_box {
+        display: flex;
+    }
+
+    .like_box {
+        margin-top: 80px;
+        margin-left: 50px;
+    }
+
+    .food_text {
+        margin-top: 20px;
+        font-size: 11px;
+    }
+
+    .difficulty {
+        font-size: 11px;
+    }
+
 </style>
 <div class="box1">
     <div id="title">
@@ -114,19 +207,348 @@
         <input id="search" type="text" placeholder="검색어를 입력하시오">
         <i class="fas fa-search"></i>
     </div>
-    <div id="recipe_box">
-        <div id="photo_box">
-            <div id="photo"></div>
-            <div id="text_box">
-                <div id="recipe_name">{{ recipe.name }}</div>
-                <div class="star">★★★★</div>
-                <div id="recipe_text">{{ recipe.text }}</div>
+</div>
+
+<div id="section">
+
+    <div class="store_list_box">
+        <div class="list_box">
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <i class="far fa-heart"></i>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="store_list_box">
+        <div class="list_box">
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="store_list_box">
+        <div class="list_box">
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/recipebook/list/" + food_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                            </div>
+                            <div class='name_box'>
+                                <a href='/recipebook/list/" + food_id + "'>" + food_name + "</a>
+                                <div class="difficulty">
+                                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                                </div>
+                                <div class="food_text">
+                                    {{ 음식간략설명 }}
+                                </div>
+                                <div class="like_box">
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + food_id + "' style='color: #448B18;'></i>
+                                    <i id='" + food_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + food_id + "' style='color: red;'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
-</div>
-</div>
+
+
+<script>
+
+
+    function store_like(id) {
+        console.log("hi")
+        $.ajax({
+            url: "{% url 'like:api' %}", // data를 전송할 url 입니다.
+            method: "POST",
+            data: {
+                'csrfmiddlewaretoken': "{{ csrf_token }}",
+                'store_id': id
+            }, // post_id 라는 name으로 id 값 전송
+            dataType: "json",
+            success: function (response) { // ajax 통신이 정상적으로 완료되었을 때
+                if (response.is_liked) {
+                    var class_cnt = document.getElementsByClassName(response.store_id).length;
+                    for (var i = 0; i < class_cnt; i++) {
+                        document.getElementsByClassName(response.store_id)[i].classList.replace('far', 'fas');
+                        document.getElementsByClassName(response.store_id)[i].style.color = "red";
+                    }
+
+                } else {
+                    var class_cnt = document.getElementsByClassName(response.store_id).length;
+                    for (var i = 0; i < class_cnt; i++) {
+                        document.getElementsByClassName(response.store_id)[i].classList.replace('fas', 'far');
+                        document.getElementsByClassName(response.store_id)[i].style.color = "royalblue";
+                    }
+
+                }
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "{% url 'store:list_api' 6 %}",
+            headers: {
+                "Authorization": "Token {{ token }}",
+            },
+            method: "GET",
+            datatype: 'json',
+            async: false,
+            success: function (data) {
+                var list = data.storeList;
+                var list_html = "";
+                for (var i = 0; i < list.length; i++) {
+                    var store_id = list[i].id;
+                    var is_liked = list[i].is_liked;
+                    var store_name = list[i].store_name;
+                    var image_tag = list[i].image_tag;
+                    list_html += "<div class='swiper-slide'>";
+                    list_html += "<div class='photo_box'>";
+                    list_html += "<div id='photo'>";
+                    list_html += "<a href='/store/detail/" + store_id + "'>"
+                    list_html += "<img class='list_image' src='" + image_tag + "'></a>";
+                    if (is_liked == false) {
+                        list_html += "<i id='" + store_id + "' onclick='store_like(this.id)' class='far fa-heart " + store_id + "' style='color: royalblue;'></i>";
+                    } else if (is_liked == true) {
+                        list_html += "<i id='" + store_id + "' onclick='store_like(this.id)' class='fas fa-heart " + store_id + "' style='color: red;'></i>";
+                    }
+                    list_html += "<div class='name_box'>";
+                    list_html += "<a href='/store/detail/" + store_id + "'>" + store_name + "</a>";
+                    list_html += "</div></div></div></div>";
+                }
+                document.getElementById("cafe_slider").innerHTML = list_html;
+            },
+            error: function (request, status, error) {
+                alert("error");
+                console.log('error');
+                console.log(error);
+            },
+            complete: function (data) {
+                console.log('끝');
+            }
+        });
+
+</script>
 </body>
 </html>
