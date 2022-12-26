@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe</title>
+    <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .signup-form {
+        width: 600px;
+        border: 0;
+        background-color: white;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 5px;
+    }
+
+    body {
+        margin: 0;
+        background-color: #E5F0D2;
+    }
+
+    .text-field {
+        font-size: 14px;
+        margin-bottom: 10px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        background-color: #B1D27B;
+        color: white;
+        margin-bottom: 30px;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .title {
+        text-align: center;
+        color: #448B18;
+        font-size: 20px;
+    }
+</style>
+<body>
+<div class="signup-form">
+    <div class="title">
+        <h3>Recipe Book에서 이용하실 정보를 입력해주세요.</h3>
+    </div>
+    <form id = "form_test" name = "form_test" method = "post" action = "mainpage.html">
+        <input class="text-field" name="name" type="text" placeholder="이름을 입력하세요.">
+        <input class="text-field" name="phone" type="text" placeholder="본인 명의의 휴대폰 번호를 입력하세요.">
+        <input class="text-field" name="password" type="password" placeholder="사용하실 비밀번호를 입력하세요.">
+        <input class="text-field" name="password2" type="password" placeholder="사용하실 비밀번호를 다시 입력하세요.">
+        <input class="text-field" name="nickname" type="text" placeholder="사용하실 닉네임을 입력해주세요.">
+        <input type="submit" value="회원가입" class="submit-btn">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+<style>
+    #title {
+        text-align: center;
+        font-size: 50px;
+        z-index: 1;
+        position: relative;
+    }
+
+    #menubar {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+    }
+
+    .box2 {
+        /*display: flex;*/
+    }
+
+    button {
+        background-color: white;
+        font-size: 20px;
+    }
+
+    #home {
+        border-bottom: none;
+        border-top: none;
+        border-left: black;
+    }
+
+    #mypage {
+        border-bottom: none;
+        border-top: none;
+        border-left: black;
+    }
+
+    #recipebook {
+        border-bottom: none;
+        border-top: none;
+        border-left: black;
+    }
+
+    #video {
+        border-bottom: none;
+        border-top: none;
+        border-left: black;
+    }
+
+    #store {
+        border: none;
+        color: #448B18;
+    }
+
+    #search_box {
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 300px;
+        float: right;
+        display: flex;
+        margin-top: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-right: 50px;
+    }
+
+    #search {
+        margin-left: 10px;
+        border: none;
+        text-align: center;
+    }
+
+    #search_box > i {
+        margin-left: 85px;
+    }
+
+    #section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .name_box {
+        display: inline-block;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+        margin-left: 15px;
+        z-index: 30;
+        text-align: center;
+    }
+
+    .name_box a {
+        text-decoration: none;
+    }
+
+    .name_box > a {
+        font-size: 10px;
+    }
+
+    .first_box {
+        margin-bottom: 150px;
+    }
+
+    .list_name {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+    }
+
+    .list_name > b {
+        margin-left: 10px;
+    }
+
+    .list_image {
+        width: 100%;
+        height: 150px;
+        overflow: hidden
+    }
+
+    .name_box {
+        margin-top: 5px;
+        margin-left: 15px;
+        z-index: 30;
+        text-align: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+    }
+
+    #photo {
+        height: 100px;
+        z-index: 40;
+    }
+
+    #photo > i {
+        float: right;
+        margin-top: 10px;
+        margin-right: 5px;
+        z-index: 60;
+    }
+
+    .name_box > a {
+        font-size: 13px;
+    }
+
+    .like_name_box > a {
+        font-size: 13px;
+    }
+
+    #sw {
+        box-sizing: border-box;
+        height: 200px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 18px;
+        padding: 0 0 0 0;
+        margin: 110px 0 0 0;
+    }
+
+    .swiper-slide {
+        background: white;
+        border: 3px solid #B1D27B;
+        border-radius: 5px;
+        margin: 20px 10px;
+        height: 230px;
+        padding: 20px 20px 10px 20px;
+        box-shadow: 10px 5px 10px 5px #F5F5F5;
+        width: 300px;
+    }
+
+</style>
+<div class="box1">
+    <div id="title">
+        <h3>Recipe Book</h3>
+    </div>
+    <div class="box2">
+        <div id="menubar">
+            <button id="home" type="submit"><b>홈</b></button>
+            <button id="mypage" type="submit"><b>마이페이지</b></button>
+            <button id="recipebook" type="submit"><b>레시피북</b></button>
+            <button id="video" type="submit"><b>레시피영상</b></button>
+            <button id="store" type="submit"><b>맛집</b></button>
+        </div>
+    </div>
+    <div id="search_box">
+        <input id="search" type="text" placeholder="검색어를 입력하시오">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
+
+<div id="section">
+    <div class="first_box">
+        <div class="store_list_box">
+            <div class="list_name">
+                <b>{{ user.nickname }} 님 맞춤!!</b>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: royalblue;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="store_list_box">
+            <div class="list_name">
+                <b>추천 카페</b>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: royalblue;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="store_list_box">
+            <div class="list_name">
+                <b>한식 추천</b>
+            </div>
+            <div class="swiper mySwiper">
+                <div id="personal_slider" class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <div class='photo_box'>
+                            <div id='photo'>
+                                <a href='/store/detail/" + store_id + "'>
+                                    <img class='list_image' src='" + image_tag + "'></a>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='far fa-heart " + store_id + "' style='color: royalblue;'></i>
+                                <i id='" + store_id + "' onclick='store_like(this.id)'
+                                   class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                <div class='name_box'>
+                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+
+    function store_like(id) {
+        console.log("hi")
+        $.ajax({
+            url: "{% url 'like:api' %}", // data를 전송할 url 입니다.
+            method: "POST",
+            data: {
+                'csrfmiddlewaretoken': "{{ csrf_token }}",
+                'store_id': id
+            }, // post_id 라는 name으로 id 값 전송
+            dataType: "json",
+            success: function (response) { // ajax 통신이 정상적으로 완료되었을 때
+                if (response.is_liked) {
+                    var class_cnt = document.getElementsByClassName(response.store_id).length;
+                    for (var i = 0; i < class_cnt; i++) {
+                        document.getElementsByClassName(response.store_id)[i].classList.replace('far', 'fas');
+                        document.getElementsByClassName(response.store_id)[i].style.color = "red";
+                    }
+
+                } else {
+                    var class_cnt = document.getElementsByClassName(response.store_id).length;
+                    for (var i = 0; i < class_cnt; i++) {
+                        document.getElementsByClassName(response.store_id)[i].classList.replace('fas', 'far');
+                        document.getElementsByClassName(response.store_id)[i].style.color = "royalblue";
+                    }
+
+                }
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "{% url 'store:list_api' 6 %}",
+            headers: {
+                "Authorization": "Token {{ token }}",
+            },
+            method: "GET",
+            datatype: 'json',
+            async: false,
+            success: function (data) {
+                var list = data.storeList;
+                var list_html = "";
+                for (var i = 0; i < list.length; i++) {
+                    var store_id = list[i].id;
+                    var is_liked = list[i].is_liked;
+                    var store_name = list[i].store_name;
+                    var image_tag = list[i].image_tag;
+                    list_html += "<div class='swiper-slide'>";
+                    list_html += "<div class='photo_box'>";
+                    list_html += "<div id='photo'>";
+                    list_html += "<a href='/store/detail/" + store_id + "'>"
+                    list_html += "<img class='list_image' src='" + image_tag + "'></a>";
+                    if (is_liked == false) {
+                        list_html += "<i id='" + store_id + "' onclick='store_like(this.id)' class='far fa-heart " + store_id + "' style='color: royalblue;'></i>";
+                    } else if (is_liked == true) {
+                        list_html += "<i id='" + store_id + "' onclick='store_like(this.id)' class='fas fa-heart " + store_id + "' style='color: red;'></i>";
+                    }
+                    list_html += "<div class='name_box'>";
+                    list_html += "<a href='/store/detail/" + store_id + "'>" + store_name + "</a>";
+                    list_html += "</div></div></div></div>";
+                }
+                document.getElementById("cafe_slider").innerHTML = list_html;
+            },
+            error: function (request, status, error) {
+                alert("error");
+                console.log('error');
+                console.log(error);
+            },
+            complete: function (data) {
+                console.log('끝');
+            }
+        });
+
+</script>
+</body>
+</html>

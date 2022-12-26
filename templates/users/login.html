@@ -10,7 +10,6 @@
 <style>
     * {
         box-sizing: border-box;
-        font: font-family: 'Noto Sans KR', sans-serif;
     }
 
     .login-form {
@@ -18,7 +17,7 @@
         border: 0;
         background-color: white;
         padding: 20px;
-        margin: 200px auto;
+        margin: 130px auto;
         border-radius: 5px;
     }
 
@@ -41,7 +40,7 @@
         background-color: #B1D27B;
         color: white;
         margin-bottom: 30px;
-        padding: 10px;
+        padding: 20px;
         border: none;
         border-radius: 5px;
         width: 100%;
@@ -59,16 +58,18 @@
     .title {
         text-align: center;
         color: #448B18;
+        font-size: 30px;
     }
 </style>
 <body>
-<div class="title">
-    <b>Recipe Book</b>
-</div>
+
 <div class="login-form">
+    <div class="title">
+        <h3>Recipe Book</h3>
+    </div>
     <form>
-        <input type="text" name="id" class="text-field" placeholder="아이디">
-        <input type="password" name="password" class="text-field" placeholder="비밀번호">
+        <input type="text" name="id" class="text-field" placeholder="본인 명의의 휴대폰 번호를 입력하세요.">
+        <input type="password" name="password" class="text-field" placeholder="비밀번호를 입력하세요."">
         <input type="submit" value="로그인" class="submit-btn">
     </form>
     <div class="links">
