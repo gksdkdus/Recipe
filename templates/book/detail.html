@@ -81,7 +81,8 @@
         text-align: center;
         font-size: 18px;
         padding: 0 0 0 0;
-        margin: 60px 0 0 0;
+        margin: 20px 0 0 0;
+        width: 440px;
     }
 
     .detail_image {
@@ -182,28 +183,9 @@
         font-size: 30px;
     }
 
-    #search_box {
-        border: 2px solid black;
-        border-radius: 10px;
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        margin-top: 5px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: white;
-    }
-
-    #search {
-        margin-left: 10px;
-        border: none;
-        text-align: center;
-        background-color: white;
-    }
-
-    #search_box > i {
-        margin-left: 280px;
+    .difficulty {
+        font-size: 11px;
+        margin-left: 400px;
     }
 
 </style>
@@ -211,15 +193,15 @@
 <div class="title">
     <h3>Recipe Book</h3>
 </div>
-<div id="search_box">
-    <input id="search" type="text" placeholder="검색어를 입력하시오">
-    <i class="fas fa-search"></i>
-</div>
+
 <div id="section">
     <div class="detail_top_box">
         <div class="detail_top">
             <b id="store_name">
-                <p><b>" + data.store_name + "</b></p>
+                <p><b>" + data.book_name + "</b></p>
+                <div class="difficulty">
+                    <p><b>난이도: " + data.difficulty_star + "</b></p>
+                </div>
             </b>
         </div>
     </div>
@@ -263,21 +245,6 @@
         <button id="review_btn"><b>리 뷰</b></button>
     </div>
 
-    <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-    </div>
-    <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-    </div>
-    <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-    </div>
 
     <script>
         var swiper = new Swiper(".mySwiper", {
