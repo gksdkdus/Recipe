@@ -2,50 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recpie</title>
+    <title>mypage</title>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 <style>
-     #title{
+    #title {
         text-align: center;
         font-size: 50px;
         z-index: 1;
         position: relative;
     }
-    #menubar{
+
+    #menubar {
         text-align: center;
         z-index: 2;
         position: relative;
     }
-    .box2{
+
+    .box2 {
         /*display: flex;*/
     }
-    button{
+
+    button {
         background-color: white;
         font-size: 20px;
     }
-    #home{
+
+    #home {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #mypage{
+
+    #mypage {
         border-bottom: none;
         border-top: none;
         border-left: black;
         color: #448B18;
     }
-    #recipebook{
+
+    #recipebook {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #video{
+
+    #video {
         border-bottom: none;
         border-top: none;
         border-left: black;
     }
-    #store{
+
+    #store {
         border: none;
     }
 
@@ -56,10 +64,12 @@
         border-radius: 400px;
         background-color: lightgray;
     }
-    .nickname{
+
+    .nickname {
 
     }
-    #profile_change{
+
+    #profile_change {
         font-size: 15px;
         padding: 5px 30px 5px 30px;
         border: none;
@@ -67,6 +77,7 @@
         background-color: #B1D27B;
         color: white;
     }
+
     /*
     .nickname{
         float: right;
@@ -79,53 +90,53 @@
         padding:10px;
     }
     */
-     #photo_box {
-         width: 170px;
-         height: 110px;
-         background-color: lightgrey;
-         border: 2px solid #448B18;
-     }
+    #photo_box {
+        width: 170px;
+        height: 110px;
+        background-color: lightgrey;
+        border: 2px solid #448B18;
+    }
 
 </style>
 <body>
-    <div class="box1">
-        <div id="title">
-            <h3>Recipe Book</h3>
-        </div>
-        <div class="box2">
-            <div id="menubar">
-                <button id="home" type="submit"><b>홈</b></button>
-                <button id="mypage" type="submit"><b>마이페이지</b></button>
-                <button id="recipebook" type="submit"><b>레시피북</b></button>
-                <button id="video" type="submit"><b>레시피영상</b></button>
-                <button id="store" type="submit"><b>맛집</b></button>
-            </div>
-        </div>
-        <div class="backcolor1">
-            <div class="backcolor2">
-                <div class="backcolor3"></div>
-            </div>
-        </div>
-        <div id="profile">
-            <img id="profile_ph" src="/static/images/profile.png" alt="프로필">
-            <div class="nickname">
-                <b>{{ user.nickname }} 님</b>
-            </div>
-            <div class="profile_change">
-                <button id="profile_change" type="submit">회원정보수정</button>
-            </div>
-        </div>
-        <div class="like_list">
-            <div id="like_title"><b>LIKE LIST</b></div>
-            <div id="video">
-                <div id="photo_box">
-                    dddd
-                    <div id='photo'>dd</div>
-                </div>
-                <div id="food_name">{{ food.foodname }}</div>
-                <i class="far fa-heart"></i>
-            </div>
+<div class="box1">
+    <div id="title">
+        <h3>Recipe Book</h3>
+    </div>
+    <div class="box2">
+        <div id="menubar">
+            <button id="home" type="submit" onclick="location.href='../home/mainpage.html'"><b>홈</b></button>
+            <button id="mypage" type="submit" onclick="location.href='../users/mypage.html'"><b>마이페이지</b></button>
+            <button id="recipebook" type="submit" onclick="location.href='../book/list.html'"><b>레시피북</b></button>
+            <button id="video" type="submit" onclick="location.href='../video/list.html'"><b>레시피영상</b></button>
+            <button id="store" type="submit" onclick="location.href='../stores/list.html'"><b>맛집</b></button>
         </div>
     </div>
+    <div class="backcolor1">
+        <div class="backcolor2">
+            <div class="backcolor3"></div>
+        </div>
+    </div>
+    <div id="profile">
+        <img id="profile_ph" src="/static/images/profile.png" alt="프로필">
+        <div class="nickname">
+            <b>{{ user.nickname }} 님</b>
+        </div>
+        <div class="profile_change">
+            <button id="profile_change" type="submit">회원정보수정</button>
+        </div>
+    </div>
+    <div class="like_list">
+        <div id="like_title"><b>LIKE LIST</b></div>
+        <div id="video">
+            <div id="photo_box">
+                dddd
+                <div id='photo'>dd</div>
+            </div>
+            <div id="food_name">{{ food.foodname }}</div>
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+</div>
 </body>
 </html>

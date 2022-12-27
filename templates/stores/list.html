@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>store_list</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
@@ -178,7 +178,7 @@
         display: flex;
     }
 
-    .store_list_box{
+    .store_list_box {
         margin-left: 100px;
     }
 
@@ -189,11 +189,11 @@
     </div>
     <div class="box2">
         <div id="menubar">
-            <button id="home" type="submit"><b>홈</b></button>
-            <button id="mypage" type="submit"><b>마이페이지</b></button>
-            <button id="recipebook" type="submit"><b>레시피북</b></button>
-            <button id="video" type="submit"><b>레시피영상</b></button>
-            <button id="store" type="submit"><b>맛집</b></button>
+            <button id="home" type="submit" onclick="location.href='../home/mainpage.html'"><b>홈</b></button>
+            <button id="mypage" type="submit" onclick="location.href='../users/mypage.html'"><b>마이페이지</b></button>
+            <button id="recipebook" type="submit" onclick="location.href='../book/list.html'"><b>레시피북</b></button>
+            <button id="video" type="submit" onclick="location.href='../video/list.html'"><b>레시피영상</b></button>
+            <button id="store" type="submit" onclick="location.href='../stores/list.html'"><b>맛집</b></button>
         </div>
     </div>
     <div id="search_box">
@@ -223,7 +223,7 @@
                                 <i id='" + store_id + "' onclick='store_like(this.id)'
                                    class='fas fa-heart " + store_id + "' style='color: red;'></i>
                                 <div class='name_box'>
-                                    <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                    <a href='../stores/detail.html'>" + store_name + "</a>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +486,17 @@
                 console.log('끝');
             }
         });
-
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
 </script>
 </body>
 </html>

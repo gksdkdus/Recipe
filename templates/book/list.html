@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>book_list</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
@@ -185,6 +185,10 @@
         font-size: 11px;
     }
 
+    .food_text > a{
+        color: inherit;
+    }
+
     .difficulty {
         font-size: 11px;
     }
@@ -196,11 +200,11 @@
     </div>
     <div class="box2">
         <div id="menubar">
-            <button id="home" type="submit"><b>홈</b></button>
-            <button id="mypage" type="submit"><b>마이페이지</b></button>
-            <button id="recipebook" type="submit"><b>레시피북</b></button>
-            <button id="video" type="submit"><b>레시피영상</b></button>
-            <button id="store" type="submit"><b>맛집</b></button>
+            <button id="home" type="submit" onclick="location.href='../home/mainpage.html'"><b>홈</b></button>
+            <button id="mypage" type="submit" onclick="location.href='../users/mypage.html'"><b>마이페이지</b></button>
+            <button id="recipebook" type="submit" onclick="location.href='../book/list.html'"><b>레시피북</b></button>
+            <button id="video" type="submit" onclick="location.href='../video/list.html'"><b>레시피영상</b></button>
+            <button id="store" type="submit" onclick="location.href='../stores/list.html'"><b>맛집</b></button>
         </div>
     </div>
     <div id="search_box">
@@ -227,7 +231,7 @@
                                     <p><b>난이도: " + data.difficulty_star + "</b></p>
                                 </div>
                                 <div class="food_text">
-                                    {{ 음식간략설명 }}
+                                    <a href="../book/detail.html">{{ 음식간략설명 }}</a>
                                 </div>
                                 <div class="like_box">
                                     <i id='" + food_id + "' onclick='store_like(this.id)'
@@ -254,7 +258,7 @@
                                     <p><b>난이도: " + data.difficulty_star + "</b></p>
                                 </div>
                                 <div class="food_text">
-                                    {{ 음식간략설명 }}
+                                    <a href="../book/detail.html">{{ 음식간략설명 }}</a>
                                 </div>
                                 <div class="like_box">
                                     <i id='" + food_id + "' onclick='store_like(this.id)'
@@ -281,7 +285,7 @@
                                     <p><b>난이도: " + data.difficulty_star + "</b></p>
                                 </div>
                                 <div class="food_text">
-                                    {{ 음식간략설명 }}
+                                    <a href="../book/detail.html">{{ 음식간략설명 }}</a>
                                 </div>
                                 <div class="like_box">
                                     <i id='" + food_id + "' onclick='store_like(this.id)'

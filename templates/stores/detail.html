@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>store_detail</title>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 <style>
@@ -144,6 +144,11 @@
         margin-top: 20px;
         overflow: auto;
         z-index: 100;
+        color: black;
+    }
+
+    #review_list > p {
+        margin-left: 20px;
     }
 
     .nickname_review > b {
@@ -264,19 +269,13 @@
     </div>
 
     <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
+        <p>" + review_text + "</p>
     </div>
     <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
+        <p>" + review_text + "</p>
     </div>
     <div id="review_list" class="review_detail">
-        {{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
-        <br>{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}{{ 리뷰내용 }}
+        <p>" + review_text + "</p>
     </div>
 
     <script>
