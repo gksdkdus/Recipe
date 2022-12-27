@@ -134,6 +134,7 @@
         background-color: #B1D27B;
         color: white;
         font-size: 15px;
+        border-radius: 10px;
     }
 
     #review_list {
@@ -188,6 +189,26 @@
         margin-left: 400px;
     }
 
+    .box11 {
+        display: flex;
+    }
+
+    .cooking {
+        width: 300px;
+        height: 200px;
+        border: 2px solid grey;
+        margin-left: 120px;
+        margin-bottom: 30px;
+    }
+
+
+    .box111 {
+        display: flex;
+    }
+
+    .box1111 {
+        margin-left: 10px;
+    }
 </style>
 <body>
 <div class="title">
@@ -205,45 +226,56 @@
             </b>
         </div>
     </div>
-
-    <div class="store">
-        <div class="swiper mySwiper">
-            <div id="image_slide" class="swiper-wrapper">
-                <div id='sw' class='swiper-slide'>
-                    <img class='detail_image' src='" + data[i].image_tag + "'>
+    <div class="box11">
+        <div class="store">
+            <div class="swiper mySwiper">
+                <div id="image_slide" class="swiper-wrapper">
+                    <div id='sw' class='swiper-slide'>
+                        <img class='detail_image' src='" + data[i].image_tag + "'>
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-    <div id="store_info" class="detail">
-        <ul>
-            <li><p>" + data.store_name + "</p></li>
-            <li><p>" + data.store_adress + "</p></li>
-            <li><p>" + data.store_tel + "</p></li>
-        </ul>
-    </div>
-
-    <div class="result">
-        <b id="detail_review">전체 리뷰 결과</b>
-        <div class="detail_star">
-            <div class="star-ratings">
-
-                <div class="star-ratings-fill space-x-2 text-lg">
-                    <span>★</span>
-                </div>
-                <div class="star-ratings-base space-x-2 text-lg">
-                    <span>★</span><span id="avg_star"></span>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-        <button id="write" type="button"><i class="fas fa-pen"> 리뷰 작성하기</i></button>
+
+        <div id="store_info" class="detail">
+            <div class="box1111">
+                <div class="review">
+                    <button id="review_btn"><b>[ 재료 ]</b></button>
+                </div>
+                <p>[ 재료 ]</p>
+                <ul>
+                    <li><p>" + data.cooking_ingredient + "</p></li>
+                    <li><p>" + data.cooking_ingredient + "</p></li>
+                    <li><p>" + cooking_ingredient + "</p></li>
+                </ul>
+                <p>[ 양념 ]</p>
+                <ul>
+                    <li><p>" + data.cooking_seasoning + "</p></li>
+                    <li><p>" + data.cooking_seasoning + "</p></li>
+                    <li><p>" + cooking_seasoning + "</p></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="review">
-        <button id="review_btn"><b>리 뷰</b></button>
+        <button id="review_btn"><b>[ 조리순서 ]</b></button>
     </div>
+    <ol>
+        <div class="box111">
+            <li><p>" + data.cooking_order + "</p></li>
+            <div class="cooking"><a><img class='list_image' src='" + image_tag + "'></a></div>
+        </div>
+        <div class="box111">
+            <li><p>" + data.cooking_order + "</p></li>
+            <div class="cooking"><a><img class='list_image' src='" + image_tag + "'></a></div>
+        </div>
+        <div class="box111">
+            <li><p>" + data.cooking_order + "</p></li>
+            <div class="cooking"><a><img class='list_image' src='" + image_tag + "'></a></div>
+        </div>
+    </ol>
 
 
     <script>

@@ -185,7 +185,7 @@
         font-size: 11px;
     }
 
-    .food_text > a{
+    .food_text > a {
         color: inherit;
     }
 
@@ -553,6 +553,73 @@
             }
         });
 
+</script>
+<script>
+    function search_list() {
+        var ss = document.ss;
+
+        ss.submit();
+    }
+
+
+    const toDoForm = document.querySelector('#todo-form');
+    const toDoInput = toDoForm.querySelector('input');
+    const toDoList = document.querySelector('#todo-list');
+    const allDelete = document.querySelector('.allDelete');
+    const txt = document.querySelector('.txt');
+    const TODOS_KEY = "todos";
+
+    let toDos = new Array();
+
+    function saveToDos() {
+        typeof (Storage) !== 'undefined' && localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+    };
+
+    function allDeleteToDo() {
+        localStorage.clear(toDos);
+        toDoList.innerText = '최근검색어 내역이 없습니다.';
+    };
+
+    function deleteToDo(e) {
+        const li = e.target.parentElement;
+        li.remove();
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+        toDos.length === 0 && (txt.innerText = '최근검색어 내역이 없습니다.')
+        saveToDos();
+    };
+
+    function paintToDo(newTodo) {
+        const {id, text} = newTodo;
+        const item = document.createElement("li");
+        const span = document.createElement("span");
+        item.id = id;
+        span.innerText = text;
+        allDelete.addEventListener("click", allDeleteToDo);
+        item.appendChild(span);
+        toDoList.appendChild(item);
+        newTodo !== null && allDelete.classList.remove('off');
+    };
+
+    function handleToDoSubmit(event) {
+        event.preventDefault();
+        const newTodoItem = toDoInput.value;
+        toDoInput.value = '';
+        const newTodoObj = {
+            id: Date.now(),
+            text: newTodoItem
+        };
+        toDos.push(newTodoObj);
+        paintToDo(newTodoObj);
+        saveToDos();
+    };
+
+    toDoForm.addEventListener('submit', handleToDoSubmit);
+
+    const savedToDos = JSON.parse(localStorage.getItem(TODOS_KEY));
+    if (savedToDos !== null) {
+        toDos = savedToDos
+        savedToDos.forEach(paintToDo);
+    }
 </script>
 </body>
 </html>

@@ -97,6 +97,114 @@
         border: 2px solid #448B18;
     }
 
+    #section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .name_box {
+        display: inline-block;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+        margin-left: 15px;
+        z-index: 30;
+        text-align: center;
+    }
+
+    .name_box a {
+        text-decoration: none;
+    }
+
+    .name_box > a {
+        font-size: 10px;
+    }
+
+    .list_name {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+    }
+
+    .list_name > b {
+        margin-left: 10px;
+    }
+
+    .list_image {
+        width: 100%;
+        height: 145px;
+        overflow: hidden
+    }
+
+    .name_box {
+        margin-top: 5px;
+        margin-left: 15px;
+        z-index: 30;
+        text-align: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+    }
+
+    #photo {
+        height: 100px;
+        z-index: 40;
+    }
+
+    #photo > i {
+        float: right;
+        margin-top: 10px;
+        margin-right: 5px;
+        z-index: 60;
+    }
+
+    .name_box > a {
+        font-size: 13px;
+    }
+
+    .like_name_box > a {
+        font-size: 13px;
+    }
+
+    #sw {
+        box-sizing: border-box;
+        height: 200px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 18px;
+        padding: 0 0 0 0;
+        margin: 110px 0 0 0;
+    }
+
+    .swiper-slide {
+        background: white;
+        border: 3px solid #B1D27B;
+        border-radius: 5px;
+        margin: 20px 20px 20px 20px;
+        height: 170px;
+        padding: 20px 20px 10px 20px;
+        box-shadow: 10px 5px 10px 5px #F5F5F5;
+        width: 280px;
+    }
+
+    .list_box {
+        display: flex;
+    }
+
+    .store_list_box {
+        margin-left: 100px;
+    }
+    #like_title{
+        margin-top: 100px;
+        margin-left: 120px;
+    }
+    #profile{
+        margin-left: 120px;
+    }
 </style>
 <body>
 <div class="box1">
@@ -128,13 +236,67 @@
     </div>
     <div class="like_list">
         <div id="like_title"><b>LIKE LIST</b></div>
-        <div id="video">
-            <div id="photo_box">
-                dddd
-                <div id='photo'>dd</div>
+        <div class="store_list_box">
+            <div class="list_box">
+                <div class="swiper mySwiper">
+                    <div id="personal_slider" class="swiper-wrapper">
+                        <div class='swiper-slide'>
+                            <div class='photo_box'>
+                                <div id='photo'>
+                                    <a href='/store/detail/" + store_id + "'>
+                                        <img class='list_image' src='" + image_tag + "'></a>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                    <div class='name_box'>
+                                        <a href='../stores/detail.html'>" + store_name + "</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper mySwiper">
+                    <div id="personal_slider" class="swiper-wrapper">
+                        <div class='swiper-slide'>
+                            <div class='photo_box'>
+                                <div id='photo'>
+                                    <a href='/store/detail/" + store_id + "'>
+                                        <img class='list_image' src='" + image_tag + "'></a>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                    <div class='name_box'>
+                                        <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper mySwiper">
+                    <div id="personal_slider" class="swiper-wrapper">
+                        <div class='swiper-slide'>
+                            <div class='photo_box'>
+                                <div id='photo'>
+                                    <a href='/store/detail/" + store_id + "'>
+                                        <img class='list_image' src='" + image_tag + "'></a>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='far fa-heart " + store_id + "' style='color: #448B18;'></i>
+                                    <i id='" + store_id + "' onclick='store_like(this.id)'
+                                       class='fas fa-heart " + store_id + "' style='color: red;'></i>
+                                    <div class='name_box'>
+                                        <a href='/store/detail/" + store_id + "'>" + store_name + "</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="food_name">{{ food.foodname }}</div>
-            <i class="far fa-heart"></i>
+
         </div>
     </div>
 </div>
